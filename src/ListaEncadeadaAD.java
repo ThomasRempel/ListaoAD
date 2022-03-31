@@ -81,4 +81,24 @@ public class ListaEncadeadaAD {
                 primeiro = ultimo = null; 
            } 
     }
+    
+    public NoAD remove(NoAD pno) {
+        NoAD noad;
+        do {
+            noad = primeiro;
+            //se isso for true significa que o NoAD do parametro é igual ao que estamos lendo
+            if(noad.getDado() == pno.getDado() && noad.getProximo() == pno.getProximo()) {
+                return noad;
+            }
+            //se for false, ele vai ler o proximo elemento da lista
+            else {
+                noad = noad.getProximo();
+            }
+        }
+        //se o próximo for igual a null significa que não tem mais nenhum
+        //elemento depois dele, então não existe mais ninguém para ser lido
+        while(noad.getProximo() != null);
+
+        return noad;
+    }
 }
