@@ -70,7 +70,16 @@ public class ListaEncadeadaAD {
 
         return true;
     }
-    public void remover(){ 
+    
+        
+    public NoAD removePrimeiro(){
+        NoAD itemRemovido = this.primeiro;
+        this.primeiro = null;
+
+        return itemRemovido;
+    }
+    
+    public void removeUltimo(){ 
            if(this.primeiro() != null){ 
                 return this.primeiro
                 NoAD pNo = ultimoElemento.setDado(this.primeiro); 
